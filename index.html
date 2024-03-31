@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="nonModalWindow" class="non-modal-window">
+        <div class="window-content">
+                <h2>Subscription</h2>
+                <p>You can`t really decline</p>
+                <ul>
+                    <li id="agreeWindowbtn" class="agree-btn">Agree</li>
+                    <li id="declineWindowBtn" class="close-btn">Decline</li>
+                </ul> 
+        </div>
+    </div>
+
+	<div id="myModal" class="modal">
+		<div class="modal-content">
+		  <span class="close_adv_btn" id="closeAdvBtn">&times;</span>
+		  <p id="advertismentTimer"></p>
+		</div>
+	</div>
+  
+    <div class="navbar">
+        <button onclick="loadProducts('Axes')">Axes</button>
+        <button onclick="loadProducts('Halberd')">Halberd</button>
+        <button onclick="loadProducts('Greatsword')">Greatsword</button>
+        <button onclick="loadProducts()">All</button>
+    </div>
+    <div id="container-id">
+
+	</div>
+
+	<script src="ad.js"></script>
+   	<script src="script.js"></script>
+	<script src="nonmod.js"></script>
+</body>
+</html>
