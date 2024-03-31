@@ -1,3 +1,30 @@
+.navbar{
+  background-color: rgba(206, 208, 255, 0.699);
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+}
+ul {
+  list-style-type: none;
+}
+
+li {
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  background-color: #ffffff;
+  border: 1px solid #c3c3c3;
+  box-sizing: border-box;
+}
+
+li button {
+  background-color: #ffffff;
+  color: rgba(88, 119, 255, 0.699);
+  border: none;
+  cursor: pointer;
+}
 .container{
   margin: 2rem;
   border-radius: 5px;
@@ -23,10 +50,6 @@
 p {    
     text-align: center;
 }
-
-li {
-    float: left;
-  }
   
   a {
     /* display: block; */
@@ -128,7 +151,4 @@ li {
 }
 .window-content {
   text-align: center;
-}
-ul{
-  list-style-type: none;
 }
