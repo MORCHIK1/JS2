@@ -1,4 +1,4 @@
-.navbar{
+.navibar{
   background-color: rgba(206, 208, 255, 0.699);
   padding: 1rem;
   display: flex;
@@ -35,9 +35,9 @@ li button {
   align-items: stretch;
 } 
 .card-elem {
+  min-height: 179px;
   background-color: rgb(255, 255, 255);
   border-radius: 0.25rem;
-  max-width: calc(33.33% - 0px);
   border: 1px solid #ccc;
   padding: 10px;
   box-sizing: border-box;
@@ -67,7 +67,7 @@ p {
   }
 
 
-  .modal {
+  .modalAD {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
@@ -82,7 +82,7 @@ p {
   }
   
   /* Modal Content */
-  .modal-content {
+  .modalAD-content {
     background-color: #fefefe;
     margin: auto;
     padding: 20px;
@@ -142,6 +142,7 @@ p {
   padding: 5px;
 }
 
+
 .agree-btn {
   background-color: green;
   height: 2rem;
@@ -152,4 +153,24 @@ p {
 }
 .window-content {
   text-align: center;
+}
+
+.show-cart li {
+  display: flex;
+}
+.card {
+  margin-bottom: 20px;
+}
+.card-img-top {
+  width: 200px;
+  height: 200px;
+  align-self: center;
+}
+.upBut{
+  background-color: #ffc919;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
 }

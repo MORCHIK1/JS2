@@ -3,35 +3,35 @@ let products = [
         id: 1,
         name: "Battle axe",
         category: "Axes",
-        description: "A thick, heavy blade attached to a handle. A versatile, standard weapon",
+        cost: "100",
         image: "media/battle_axe_weapon_elden_ring_wiki_guide_200px.webp"
     },
     {
         id: 2,
         name: "Iron Cleaver",
         category: "Axes",
-        description: "Fairly large iron cleaver",
+        cost: "300",
         image: "media/iron_cleaver_weapon_elden_ring_wiki_guide_200px.png"
     },
     {
         id: 3,
         name: "Glaive",
         category: "Halberd",
-        description: "Weapon comprised of a sharp blade affixed to a long grip.",
+        cost: "800",
         image: "media/glaive_halberds_elden_ring_wiki_guide_200px.webp"
     },
     {
         id: 4,
         name: "Lucerne",
         category: "Halberd",
-        description: "This polearm features a hard, sharpened beak-like spike attached to its head, designed to pierce armor.",
+        cost: "770",
         image: "media/lucerne_halberd_weapon_elden_ring_wiki_guide_200px.webp"
     },
     {
         id: 5,
         name: "Blasphemous Blade",
         category: "Greatsword",
-        description: "Sacred sword of Rykard, Lord of Blasphemy.",
+        cost: "2000",
         image: "media/blasphemous_blade_weapon_elden_ring_wiki_guide_200px.webp"
     },
 
@@ -39,33 +39,36 @@ let products = [
         id: 6,
         name: "Claymore",
         category: "Greatsword",
-        description: "A large sword with a long, straight blade.",
+        cost: "500",
         image: "media/claymore_weapon_elden_ring_wiki_guide_200px.webp"
     },
 
 ];
-
-
 
 function loadProducts(category) {
     let filterFunction;
     filterFunction = category ? (product) => product.category === category : () => true;
 
     let productsFiltered = products.filter(filterFunction);
-    let productsHtml = '<div class="container">';
+    let productsHtml = '<div class="container"> <div class="row">';
 
-    for (let i = 0; i < productsFiltered.length; i++) {
-        productsHtml += `<div class='card-elem' id='${productsFiltered[i].id}'>
-                            <h2>${productsFiltered[i].name}</h2> 
-                            <img size='30%' src='${productsFiltered[i].image}'/> 
-                            <p><button class="active_desc">INFO</button></p> <p class="description">${productsFiltered[i].description}</p>
+    for (let i = 0; i <productsFiltered.length; i++) {
+        productsHtml += `<div class="col">
+                            <div class="card" style="width: 20rem;">
+                                <img class="card-img-top" src="${productsFiltered[i].image}" alt="Card image cap">
+                                <div class='card-elem' id='${productsFiltered[i].id}'>
+                                    <h2 align="center">${productsFiltered[i].name}</h2> 
+                                    <p class="card-text">Price: ${productsFiltered[i].cost}$</p>
+                                    <a href="#" data-name=${productsFiltered[i].name} data-price="${productsFiltered[i].cost}" class="add-to-cart btn btn-primary">Add to cart</a>
+                                </div>
+                            </div>
                         </div>`;
 
         if ((i+1) % 2 == 0 ) {
-            productsHtml += '</div><div class="container">';
+            productsHtml += '</div><div class="row">';
         }
     }
-
+    productsHtml+="</div>";
 
     let productsContainer = document.getElementById('container-id');
     productsContainer.innerHTML = productsHtml;
@@ -73,43 +76,17 @@ function loadProducts(category) {
 
 loadProducts();
 
-document.addEventListener('click', function (event) {
-    if (event.target.classList.contains('active_desc')) {
-        
-        let description = event.target.parentElement.nextElementSibling;
-        let close = document.createElement('button');
+mybutton = document.getElementById("upButton");
 
-        makeModalDescription(description);
-        makeCloseButton(close);
-
-        close.addEventListener('click', function () {
-            description.style.display = 'none';
-        });
-        
-        description.appendChild(close);
-    }
-});
-
-function makeModalDescription(description) {
-    description.style.display = 'block';
-    description.style.position = 'fixed';
-    description.style.top = '40%';
-    description.style.left = '50%';
-    description.style.transform = 'translate(-50%, -50%)';
-    description.style.backgroundColor = 'white';
-    description.style.padding = '40px';
-    description.style.border = '2px solid black';
-    description.style.borderRadius = '60px';
+window.onscroll = function() {scrollFunction()};
+function scrollFunction() {
+  if (document.body.scrollTop > (document.body.scrollHeight/3) || document.documentElement.scrollTop > (document.body.scrollHeight/3)) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
 }
-
-function makeCloseButton(close){
-    close.innerHTML = `X`;
-    close.style.position = 'fixed';
-    close.style.top = '6%';
-    close.style.right = '4%';
-    close.style.color = 'red';
-    close.style.border = 'none';
-    close.style.cursor = 'pointer';
-    close.style.background = 'none';
-    close.style.width = '30px';
+function topFunction() {
+    document.documentElement.scrollTop = 0;
 }
+mybutton.addEventListener("click", topFunction);
