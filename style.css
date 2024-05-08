@@ -25,6 +25,10 @@ li button {
   border: none;
   cursor: pointer;
 }
+.kartinka{
+  margin-right: 30px;
+  border-radius: 0.3rem;
+}
 .container{
   margin: 2rem;
   border-radius: 5px;
@@ -169,8 +173,10 @@ p {
 .upBut{
   background-color: #ffc919;
   color: white;
-  padding: 15px;
+  padding: 10px;
   text-align: center;
   font-size: 16px;
   margin: 4px 2px;
+  position: fixed;
+  bottom: 0%;
 }
